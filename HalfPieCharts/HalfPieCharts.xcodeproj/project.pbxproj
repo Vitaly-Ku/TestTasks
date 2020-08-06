@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CCE6AC3F00E725A25CFE0F0 /* Pods_HalfPieCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFCEC9C00792748E137F2C7 /* Pods_HalfPieCharts.framework */; };
 		5D020B6D24DC3D6200CBADC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020B6C24DC3D6200CBADC5 /* AppDelegate.swift */; };
 		5D020B6F24DC3D6200CBADC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020B6E24DC3D6200CBADC5 /* SceneDelegate.swift */; };
 		5D020B7124DC3D6200CBADC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020B7024DC3D6200CBADC5 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C463FE9171F61E706EA846 /* Pods-HalfPieCharts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPieCharts.release.xcconfig"; path = "Target Support Files/Pods-HalfPieCharts/Pods-HalfPieCharts.release.xcconfig"; sourceTree = "<group>"; };
 		5D020B6924DC3D6200CBADC5 /* HalfPieCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalfPieCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D020B6C24DC3D6200CBADC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D020B6E24DC3D6200CBADC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		5D020B7524DC3D6400CBADC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D020B7824DC3D6400CBADC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D020B7A24DC3D6400CBADC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCFCEC9C00792748E137F2C7 /* Pods_HalfPieCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalfPieCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE915EB68AA53CB4E2A5DEC8 /* Pods-HalfPieCharts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPieCharts.debug.xcconfig"; path = "Target Support Files/Pods-HalfPieCharts/Pods-HalfPieCharts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCE6AC3F00E725A25CFE0F0 /* Pods_HalfPieCharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				5D020B6B24DC3D6200CBADC5 /* HalfPieCharts */,
 				5D020B6A24DC3D6200CBADC5 /* Products */,
+				C9FB92314217225DB8894B72 /* Pods */,
+				B347A91F46CEFB3283C0A984 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = HalfPieCharts;
 			sourceTree = "<group>";
 		};
+		B347A91F46CEFB3283C0A984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCEC9C00792748E137F2C7 /* Pods_HalfPieCharts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9FB92314217225DB8894B72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE915EB68AA53CB4E2A5DEC8 /* Pods-HalfPieCharts.debug.xcconfig */,
+				09C463FE9171F61E706EA846 /* Pods-HalfPieCharts.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D020B7D24DC3D6400CBADC5 /* Build configuration list for PBXNativeTarget "HalfPieCharts" */;
 			buildPhases = (
+				A6483ECB44F2172ADF94CAD1 /* [CP] Check Pods Manifest.lock */,
 				5D020B6524DC3D6200CBADC5 /* Sources */,
 				5D020B6624DC3D6200CBADC5 /* Frameworks */,
 				5D020B6724DC3D6200CBADC5 /* Resources */,
+				EE6A927F75D24C77540D8B16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A6483ECB44F2172ADF94CAD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalfPieCharts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE6A927F75D24C77540D8B16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalfPieCharts/Pods-HalfPieCharts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalfPieCharts/Pods-HalfPieCharts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalfPieCharts/Pods-HalfPieCharts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D020B6524DC3D6200CBADC5 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		5D020B7E24DC3D6400CBADC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE915EB68AA53CB4E2A5DEC8 /* Pods-HalfPieCharts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		5D020B7F24DC3D6400CBADC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C463FE9171F61E706EA846 /* Pods-HalfPieCharts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
