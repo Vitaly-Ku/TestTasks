@@ -1,24 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIM-GJ-1Ms">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FirstVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstVC" customModule="HalfPieCharts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTV-8G-RWf" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="GVj-4A-3dV"/>
+                                    <constraint firstAttribute="width" constant="300" id="ylq-Gc-NWm"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="q0G-32-OAM">
+                                <rect key="frame" x="57" y="246" width="300" height="32"/>
+                                <subviews>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-gf-MWc">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="changeLeft:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gsh-BK-vl9"/>
+                                        </connections>
+                                    </stepper>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="h47-sS-g2J">
+                                        <rect key="frame" x="206" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="changeRight:" destination="BYZ-38-t0r" eventType="valueChanged" id="rfL-er-26A"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="q0G-32-OAM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5qg-Md-gq5"/>
+                            <constraint firstItem="q0G-32-OAM" firstAttribute="width" secondItem="NTV-8G-RWf" secondAttribute="width" id="HQT-3w-5zo"/>
+                            <constraint firstItem="NTV-8G-RWf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YBh-nf-2Zb"/>
+                            <constraint firstItem="NTV-8G-RWf" firstAttribute="top" secondItem="q0G-32-OAM" secondAttribute="bottom" constant="20" id="i1p-ms-mXB"/>
+                            <constraint firstItem="NTV-8G-RWf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uUE-FC-LNd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="halfPieCart" destination="NTV-8G-RWf" id="el2-Ql-0v9"/>
+                        <outlet property="leftStepper" destination="2QX-gf-MWc" id="2bq-Es-Swx"/>
+                        <outlet property="rightStepper" destination="h47-sS-g2J" id="HAP-gn-rcA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="rKG-09-nX4">
+            <objects>
+                <viewController id="oIM-GJ-1Ms" customClass="SecondVC" customModule="HalfPieCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cOp-WC-E3J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZi-bX-C4X">
+                                <rect key="frame" x="147" y="398" width="120" height="100"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Qh6-6J-ybq"/>
+                                    <constraint firstAttribute="width" constant="120" id="bad-e7-TdE"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szm-5b-3iX">
+                                <rect key="frame" x="184" y="168" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="oIM-GJ-1Ms" eventType="touchUpInside" id="p4j-of-GtI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VZi-bX-C4X" firstAttribute="centerX" secondItem="cOp-WC-E3J" secondAttribute="centerX" id="Llq-EB-Onf"/>
+                            <constraint firstItem="VZi-bX-C4X" firstAttribute="top" secondItem="szm-5b-3iX" secondAttribute="bottom" constant="200" id="Wgu-rS-3XC"/>
+                            <constraint firstItem="szm-5b-3iX" firstAttribute="centerX" secondItem="cOp-WC-E3J" secondAttribute="centerX" id="k78-fa-OzF"/>
+                            <constraint firstItem="VZi-bX-C4X" firstAttribute="centerY" secondItem="cOp-WC-E3J" secondAttribute="centerY" id="rI0-UW-rAW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pVv-20-7PL"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="szm-5b-3iX" id="KHf-YA-a5N"/>
+                        <outlet property="centerView" destination="VZi-bX-C4X" id="886-QS-t3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eg8-2p-cgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="138"/>
         </scene>
     </scenes>
 </document>
