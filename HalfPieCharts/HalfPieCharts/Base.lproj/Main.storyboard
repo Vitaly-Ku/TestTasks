@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIM-GJ-1Ms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W4x-Hh-9it">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -61,6 +61,173 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
+        <!--SplashVC-->
+        <scene sceneID="95G-T5-pma">
+            <objects>
+                <viewController id="W4x-Hh-9it" customClass="SplashVC" customModule="HalfPieCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APu-6X-CBV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="nhY-Hn-s2s">
+                                <rect key="frame" x="111" y="413.5" width="192" height="69"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nhY-Hn-s2s" firstAttribute="centerX" secondItem="APu-6X-CBV" secondAttribute="centerX" id="IG1-7g-0ym"/>
+                            <constraint firstItem="nhY-Hn-s2s" firstAttribute="centerY" secondItem="APu-6X-CBV" secondAttribute="centerY" id="UWv-Oo-429"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mo8-uj-CoV"/>
+                    </view>
+                    <connections>
+                        <segue destination="ggM-zx-MhV" kind="presentation" identifier="segue" modalPresentationStyle="fullScreen" id="kzj-fx-Swi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFH-En-Hx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="840.40178571428567"/>
+        </scene>
+        <!--Gender SelectionVC-->
+        <scene sceneID="bla-RZ-sgR">
+            <objects>
+                <viewController id="ggM-zx-MhV" customClass="GenderSelectionVC" customModule="HalfPieCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vol-15-XeN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 из 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DU-kg-Flf">
+                                <rect key="frame" x="188" y="124" width="38.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите ваш пол?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHQ-5u-4FK">
+                                <rect key="frame" x="113" y="191" width="188" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rex-gP-ECE">
+                                <rect key="frame" x="238" y="810" width="146" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="BdY-65-0LV"/>
+                                    <constraint firstAttribute="width" constant="146" id="PKa-47-ffn"/>
+                                </constraints>
+                                <state key="normal" title="Продолжить"/>
+                                <connections>
+                                    <segue destination="Q71-CR-sMG" kind="presentation" modalPresentationStyle="fullScreen" id="zuV-HZ-OIw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чтобы быть точными, приложение должно знать это для корректной работы. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej3-bQ-YOe">
+                                <rect key="frame" x="40" y="245" width="334" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-un-3gJ">
+                                <rect key="frame" x="77" y="393" width="260" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxn-n3-nRB">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="HoX-9s-ZhK"/>
+                                            <constraint firstAttribute="height" constant="110" id="J1K-aZ-qwi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="man"/>
+                                        <connections>
+                                            <action selector="manButtonTapped:" destination="ggM-zx-MhV" eventType="touchUpInside" id="MYc-UW-oY0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EW-M0-FK9">
+                                        <rect key="frame" x="150" y="0.0" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="PEn-3S-z0K"/>
+                                            <constraint firstAttribute="width" constant="110" id="x1f-vW-Mk7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="woman"/>
+                                        <connections>
+                                            <action selector="womanButtonTapped:" destination="ggM-zx-MhV" eventType="touchUpInside" id="a1a-d7-TC5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ej3-bQ-YOe" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="4pL-qw-NhY"/>
+                            <constraint firstItem="fHQ-5u-4FK" firstAttribute="top" secondItem="8DU-kg-Flf" secondAttribute="bottom" constant="50" id="5sf-c0-bzx"/>
+                            <constraint firstItem="rex-gP-ECE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4hu-YP-NEV" secondAttribute="leading" symbolic="YES" id="KU4-83-VoY"/>
+                            <constraint firstItem="4hu-YP-NEV" firstAttribute="trailing" secondItem="rex-gP-ECE" secondAttribute="trailing" constant="30" id="UXv-UB-ete"/>
+                            <constraint firstItem="4hu-YP-NEV" firstAttribute="bottom" secondItem="rex-gP-ECE" secondAttribute="bottom" constant="20" id="Vku-9Z-t4i"/>
+                            <constraint firstItem="4hu-YP-NEV" firstAttribute="trailing" secondItem="ej3-bQ-YOe" secondAttribute="trailing" constant="40" id="VqB-xo-tzT"/>
+                            <constraint firstItem="8DU-kg-Flf" firstAttribute="top" secondItem="4hu-YP-NEV" secondAttribute="top" constant="80" id="XLM-1W-pil"/>
+                            <constraint firstItem="ej3-bQ-YOe" firstAttribute="top" secondItem="fHQ-5u-4FK" secondAttribute="bottom" constant="30" id="Zrx-9C-wOR"/>
+                            <constraint firstItem="fHQ-5u-4FK" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="bHQ-aU-WZd"/>
+                            <constraint firstItem="ej3-bQ-YOe" firstAttribute="leading" secondItem="4hu-YP-NEV" secondAttribute="leading" constant="40" id="pWw-LB-uoR"/>
+                            <constraint firstItem="8DU-kg-Flf" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="tvN-sb-mD2"/>
+                            <constraint firstItem="XdI-un-3gJ" firstAttribute="centerY" secondItem="Vol-15-XeN" secondAttribute="centerY" id="vq7-WG-dYa"/>
+                            <constraint firstItem="XdI-un-3gJ" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="x8w-5r-RbY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4hu-YP-NEV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ake-9D-JPa"/>
+                    <connections>
+                        <outlet property="chooseSexTopConstr" destination="5sf-c0-bzx" id="jEg-Ao-nLS"/>
+                        <outlet property="continueButton" destination="rex-gP-ECE" id="YMD-oY-pZ5"/>
+                        <outlet property="descriptionTopConstr" destination="Zrx-9C-wOR" id="HdY-gX-qRa"/>
+                        <outlet property="manButton" destination="Bxn-n3-nRB" id="FSg-Xz-xUw"/>
+                        <outlet property="stepTopConstr" destination="XLM-1W-pil" id="jNw-yx-cPo"/>
+                        <outlet property="womanButton" destination="6EW-M0-FK9" id="hz3-pT-Y3U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ir9-3N-HQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811.59420289855075" y="840.40178571428567"/>
+        </scene>
+        <!--Age SelectionVC-->
+        <scene sceneID="Ioe-A0-ZSJ">
+            <objects>
+                <viewController id="Q71-CR-sMG" customClass="AgeSelectionVC" customModule="HalfPieCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rR0-o5-N85">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-VN-TnY">
+                                <rect key="frame" x="42" y="81" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTl-GS-Uta">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="TZp-68-tLn"/>
+                                    <constraint firstAttribute="height" constant="200" id="nhO-Cd-DC9"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yTl-GS-Uta" firstAttribute="centerY" secondItem="rR0-o5-N85" secondAttribute="centerY" id="8o3-X9-hR3"/>
+                            <constraint firstItem="yTl-GS-Uta" firstAttribute="centerX" secondItem="rR0-o5-N85" secondAttribute="centerX" id="lIt-cf-qMc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ABs-3N-0Dx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="muj-xw-4BX"/>
+                    <connections>
+                        <outlet property="agePicker" destination="yTl-GS-Uta" id="X2W-iJ-rh6"/>
+                        <outlet property="pickerHeight" destination="nhO-Cd-DC9" id="6MQ-j5-axl"/>
+                        <outlet property="pickerWidth" destination="TZp-68-tLn" id="lHp-ea-fH3"/>
+                        <outlet property="textField1" destination="sKe-VN-TnY" id="cdV-s1-rJ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iL7-Ta-PrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460.8695652173915" y="839.73214285714278"/>
+        </scene>
         <!--SecondVC-->
         <scene sceneID="rKG-09-nX4">
             <objects>
@@ -104,4 +271,9 @@
             <point key="canvasLocation" x="799" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo1" width="192" height="69"/>
+        <image name="man" width="110" height="110"/>
+        <image name="woman" width="110" height="110"/>
+    </resources>
 </document>

@@ -16,4 +16,5 @@ extension UIColor {
     static let outlineStrokeColor = UIColor.rgb(r: 80, g: 200, b:70)
     static let trackStrokeColor = UIColor.rgb(r: 85, g: 106, b: 73)
     static let pulsatingFillColor = UIColor.rgb(r: 128, g: 160, b: 120)
+    static let mainDark = UIColor.rgb(r: 49, g: 56, b: 61)
 }
