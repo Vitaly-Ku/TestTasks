@@ -13,10 +13,10 @@ class GenderSelectionVC: UIViewController {
     @IBOutlet weak var manButton: UIButton!
     @IBOutlet weak var womanButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
-    
     @IBOutlet weak var stepTopConstr: NSLayoutConstraint!
     @IBOutlet weak var chooseSexTopConstr: NSLayoutConstraint!
     @IBOutlet weak var descriptionTopConstr: NSLayoutConstraint!
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,6 @@ class GenderSelectionVC: UIViewController {
         guard manButton.isSelected else { return makeContinueButtonDisable() }
         womanButton.isSelected = false
         manButton.setImage(#imageLiteral(resourceName: "manHighlighted"), for: .selected)
-        // TODO: сохранять пол в синглтон
     }
     
     @IBAction func womanButtonTapped(_ sender: UIButton) {
@@ -61,6 +60,24 @@ class GenderSelectionVC: UIViewController {
         guard womanButton.isSelected else { return makeContinueButtonDisable() }
         manButton.isSelected = false
         womanButton.setImage(#imageLiteral(resourceName: "womanHighlighted"), for: .selected)
-        // TODO: сохранять пол в синглтон
+    }
+    
+    @IBAction func continueButtonTapped(_ sender: UIButton) {
+        Storage.shared.gender = manButton.isSelected ? "male" : "female"
+//        defaults.set(Storage.shared.gender, forKey: Keys.gender)
+        self.performSegue(withIdentifier: "toAge", sender: self)
+    }
+    
+    // func checkForSavedData() {
+//        let startJob = defaults.value(forKey: Keys.startJob) as? String ?? ""
+//        startJobTF.text = startJob
+//        let vacationDaysPerYear = defaults.value(forKey: Keys.vacationDaysPerYear) as? String ?? ""
+//        vacationDaysPerYearTF.text = vacationDaysPerYear
+//    }
+    
+    @IBAction func stepBack(segue: UIStoryboardSegue) {
+        if segue.identifier == "backToGender" {
+//            let allGroupsTVC = segue.source as! AgeSelectionVC
+        }
     }
 }
