@@ -28,8 +28,8 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     override func viewWillLayoutSubviews() {
-        pickerWidth.constant = view.frame.height / 2
-        pickerHeight.constant = view.frame.height / 3
+        pickerWidth.constant = view.frame.width / 3
+        pickerHeight.constant = 150
         stepTopConstr.constant = view.frame.height / 20
         howOldTop.constant = view.frame.height / 12
         descriptionTopConstr.constant = view.frame.height / 30
@@ -39,6 +39,7 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         agePicker.delegate = self
         agePicker.delegate?.pickerView?(agePicker, didSelectRow: 0, inComponent: 0)
         agePicker.backgroundColor = UIColor.white
+        agePicker.selectRow(20, inComponent: 0, animated: true)
     }
     
     @objc func closePickerView() {
@@ -55,7 +56,7 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         Storage.shared.age = ages[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat { return 100.0 }
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat { return 60 }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat { return 60.0 }
     
