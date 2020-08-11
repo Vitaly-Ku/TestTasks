@@ -124,14 +124,14 @@
                                     <segue destination="Q71-CR-sMG" kind="presentation" identifier="toAge" modalPresentationStyle="fullScreen" id="zuV-HZ-OIw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чтобы быть точными, приложение должно знать это для корректной работы. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej3-bQ-YOe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чтобы быть точными, приложение должно знать это для корректной работы. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej3-bQ-YOe">
                                 <rect key="frame" x="40" y="245" width="334" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-un-3gJ">
-                                <rect key="frame" x="77" y="393" width="260" height="110"/>
+                                <rect key="frame" x="77" y="423" width="260" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxn-n3-nRB">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -171,7 +171,7 @@
                             <constraint firstItem="fHQ-5u-4FK" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="bHQ-aU-WZd"/>
                             <constraint firstItem="ej3-bQ-YOe" firstAttribute="leading" secondItem="4hu-YP-NEV" secondAttribute="leading" constant="40" id="pWw-LB-uoR"/>
                             <constraint firstItem="8DU-kg-Flf" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="tvN-sb-mD2"/>
-                            <constraint firstItem="XdI-un-3gJ" firstAttribute="centerY" secondItem="Vol-15-XeN" secondAttribute="centerY" id="vq7-WG-dYa"/>
+                            <constraint firstItem="XdI-un-3gJ" firstAttribute="centerY" secondItem="Vol-15-XeN" secondAttribute="centerY" constant="30" id="vq7-WG-dYa"/>
                             <constraint firstItem="XdI-un-3gJ" firstAttribute="centerX" secondItem="Vol-15-XeN" secondAttribute="centerX" id="x8w-5r-RbY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4hu-YP-NEV"/>
@@ -180,8 +180,11 @@
                     <connections>
                         <outlet property="chooseSexTopConstr" destination="5sf-c0-bzx" id="jEg-Ao-nLS"/>
                         <outlet property="continueButton" destination="rex-gP-ECE" id="YMD-oY-pZ5"/>
+                        <outlet property="descriptionLabel" destination="ej3-bQ-YOe" id="cAP-O9-g8q"/>
                         <outlet property="descriptionTopConstr" destination="Zrx-9C-wOR" id="HdY-gX-qRa"/>
+                        <outlet property="headerLabel" destination="fHQ-5u-4FK" id="AnA-lH-Ca8"/>
                         <outlet property="manButton" destination="Bxn-n3-nRB" id="FSg-Xz-xUw"/>
+                        <outlet property="stepLabel" destination="8DU-kg-Flf" id="XhR-kl-dOD"/>
                         <outlet property="stepTopConstr" destination="XLM-1W-pil" id="jNw-yx-cPo"/>
                         <outlet property="womanButton" destination="6EW-M0-FK9" id="hz3-pT-Y3U"/>
                     </connections>
@@ -199,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTl-GS-Uta">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <rect key="frame" x="107" y="378" width="200" height="200"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="TZp-68-tLn"/>
@@ -221,7 +224,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Эта информация позволит сделать нам более точную диагностику вашего состояния." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESE-hO-zQt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Эта информация позволит сделать нам более точную диагностику вашего состояния." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESE-hO-zQt">
                                 <rect key="frame" x="40" y="245" width="334" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -256,7 +259,7 @@
                         <constraints>
                             <constraint firstItem="KnP-us-q89" firstAttribute="top" secondItem="tca-0m-I52" secondAttribute="bottom" constant="50" id="576-X7-W7e"/>
                             <constraint firstItem="ABs-3N-0Dx" firstAttribute="trailing" secondItem="cFQ-tH-Vxl" secondAttribute="trailing" constant="30" id="7Fl-Tj-6uV"/>
-                            <constraint firstItem="yTl-GS-Uta" firstAttribute="centerY" secondItem="rR0-o5-N85" secondAttribute="centerY" id="8o3-X9-hR3"/>
+                            <constraint firstItem="yTl-GS-Uta" firstAttribute="centerY" secondItem="rR0-o5-N85" secondAttribute="centerY" constant="30" id="8o3-X9-hR3"/>
                             <constraint firstItem="ABs-3N-0Dx" firstAttribute="trailing" secondItem="ESE-hO-zQt" secondAttribute="trailing" constant="40" id="Gj5-YM-mga"/>
                             <constraint firstItem="ABs-3N-0Dx" firstAttribute="bottom" secondItem="M3N-tC-dtv" secondAttribute="bottom" constant="20" id="N85-a9-ORV"/>
                             <constraint firstItem="ESE-hO-zQt" firstAttribute="centerX" secondItem="rR0-o5-N85" secondAttribute="centerX" id="aJb-tW-1Tx"/>

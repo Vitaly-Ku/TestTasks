@@ -13,6 +13,9 @@ class GenderSelectionVC: UIViewController {
     @IBOutlet weak var manButton: UIButton!
     @IBOutlet weak var womanButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var stepTopConstr: NSLayoutConstraint!
     @IBOutlet weak var chooseSexTopConstr: NSLayoutConstraint!
     @IBOutlet weak var descriptionTopConstr: NSLayoutConstraint!
@@ -20,13 +23,12 @@ class GenderSelectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupConstraints()
         makeContinueButtonDisable()
         manButton.setImage(#imageLiteral(resourceName: "man"), for: .normal)
         womanButton.setImage(#imageLiteral(resourceName: "woman"), for: .normal)
     }
     
-    func setupConstraints() {
+    override func viewWillLayoutSubviews() {
         stepTopConstr.constant = view.frame.height / 20
         chooseSexTopConstr.constant = view.frame.height / 12
         descriptionTopConstr.constant = view.frame.height / 30
@@ -77,7 +79,6 @@ class GenderSelectionVC: UIViewController {
     
     @IBAction func stepBack(segue: UIStoryboardSegue) {
         if segue.identifier == "backToGender" {
-//            let allGroupsTVC = segue.source as! AgeSelectionVC
         }
     }
 }
