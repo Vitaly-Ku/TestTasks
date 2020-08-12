@@ -1,25 +1,25 @@
 //
-//  AgeSelectionVC.swift
+//  HeightVC.swift
 //  HalfPieCharts
 //
-//  Created by Vit K on 09.08.2020.
+//  Created by Vit K on 12.08.2020.
 //  Copyright © 2020 Vit K. All rights reserved.
 //
 
 import UIKit
 
-class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class HeightVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var agePicker: UIPickerView!
+    @IBOutlet weak var heighPicker: UIPickerView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var pickerWidth: NSLayoutConstraint!
     @IBOutlet weak var pickerHeight: NSLayoutConstraint!
     @IBOutlet weak var stepTopConstr: NSLayoutConstraint!
-    @IBOutlet weak var howOldTop: NSLayoutConstraint!
+    @IBOutlet weak var howHeighTop: NSLayoutConstraint!
     @IBOutlet weak var descriptionTopConstr: NSLayoutConstraint!
     
-    var ages = ["16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80+"]
+    var heights = ["130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +28,18 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     override func viewWillLayoutSubviews() {
-        pickerWidth.constant = view.frame.width / 3
+        stepTopConstr.constant = view.frame.width / 3
         pickerHeight.constant = 150
         stepTopConstr.constant = view.frame.height / 20
-        howOldTop.constant = view.frame.height / 12
+        howHeighTop.constant = view.frame.height / 12
         descriptionTopConstr.constant = view.frame.height / 30
     }
-    
+
     func createPickerView() {
-        agePicker.delegate = self
-        agePicker.delegate?.pickerView?(agePicker, didSelectRow: 0, inComponent: 0)
-        agePicker.backgroundColor = UIColor.white
-//        agePicker.selectRow(20, inComponent: 0, animated: true)
+        heighPicker.delegate = self
+        heighPicker.delegate?.pickerView?(heighPicker, didSelectRow: 0, inComponent: 0)
+        heighPicker.backgroundColor = UIColor.white
+//        heighPicker.selectRow(20, inComponent: 0, animated: true)
     }
     
     @objc func closePickerView() {
@@ -48,15 +48,15 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return ages.count }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return heights.count }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { return ages[row] }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { return heights[row] }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        Storage.shared.age = ages[row]
+        Storage.shared.height = heights[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat { return 60 }
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat { return 80 }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat { return 60.0 }
     
@@ -70,7 +70,7 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         label.textColor = UIColor.black
         label.textAlignment = .center
         label.font = UIFont(name: "Helvetica", size: 45)
-        label.text = ages[row]
+        label.text = heights[row]
         return label
     }
     
@@ -83,11 +83,12 @@ class AgeSelectionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func stepBack(segue: UIStoryboardSegue) {
-        if segue.identifier == "backToAge " {
+        if segue.identifier == "backToHeight " {
         }
     }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toWeigh", sender: self)
+        self.performSegue(withIdentifier: "toPhone", sender: self)
     }
 }
+

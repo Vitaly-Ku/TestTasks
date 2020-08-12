@@ -15,4 +15,5 @@ class Storage {
     
     var gender: String = ""
     var age: String = ""
+    var height: String = ""
 }
