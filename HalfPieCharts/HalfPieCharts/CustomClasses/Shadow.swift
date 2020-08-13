@@ -17,16 +17,29 @@ class Shadow: UILabel {
     }
     
     
-    @IBInspectable var color: UIColor = .black {
+//    @IBInspectable var color: UIColor = .black {
+//        didSet { self.updateColors() }
+//    }
+//    @IBInspectable var opacity: CGFloat = 1 {
+//        didSet { self.updateOpacity() }
+//    }
+//    @IBInspectable var radius: CGFloat = 7 {
+//        didSet { self.udateRadius() }
+//    }
+//    @IBInspectable var offset: CGSize = .zero {
+//        didSet { self.updateOffset() }
+//    }
+    
+    var color: UIColor = .green {
         didSet { self.updateColors() }
     }
-    @IBInspectable var opacity: CGFloat = 1 {
+    var opacity: CGFloat = 1 {
         didSet { self.updateOpacity() }
     }
-    @IBInspectable var radius: CGFloat = 7 {
+    var radius: CGFloat = 7 {
         didSet { self.udateRadius() }
     }
-    @IBInspectable var offset: CGSize = .zero {
+    var offset: CGSize = .zero {
         didSet { self.updateOffset() }
     }
     

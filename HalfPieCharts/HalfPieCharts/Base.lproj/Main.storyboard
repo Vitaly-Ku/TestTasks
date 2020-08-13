@@ -350,16 +350,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAp-DU-9jt">
+                                <rect key="frame" x="167" y="278" width="80" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="65a-m9-SHI"/>
+                                    <constraint firstAttribute="height" constant="400" id="Mmn-Ne-0Aq"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svM-iE-Q5p">
+                                <rect key="frame" x="161.5" y="376" width="91.5" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Vga-7E-ypw" firstAttribute="bottom" secondItem="7eD-F9-igC" secondAttribute="bottom" constant="20" id="2zq-bN-Kc9"/>
+                            <constraint firstItem="svM-iE-Q5p" firstAttribute="centerX" secondItem="K9d-WJ-sJI" secondAttribute="centerX" id="4VS-vI-KJ3"/>
                             <constraint firstItem="kU7-Ms-PIm" firstAttribute="centerX" secondItem="K9d-WJ-sJI" secondAttribute="centerX" id="887-8a-jrs"/>
                             <constraint firstItem="kU7-Ms-PIm" firstAttribute="leading" secondItem="K9d-WJ-sJI" secondAttribute="leading" constant="40" id="BoU-YQ-GfE"/>
                             <constraint firstItem="Ao3-Ic-7Ze" firstAttribute="leading" secondItem="K9d-WJ-sJI" secondAttribute="leading" constant="40" id="Chl-GC-0zI"/>
                             <constraint firstItem="7eD-F9-igC" firstAttribute="leading" secondItem="Vga-7E-ypw" secondAttribute="leading" constant="30" id="DP8-rz-3fm"/>
+                            <constraint firstItem="svM-iE-Q5p" firstAttribute="centerY" secondItem="K9d-WJ-sJI" secondAttribute="centerY" constant="-50" id="FTN-RT-fwp"/>
                             <constraint firstItem="Vga-7E-ypw" firstAttribute="trailing" secondItem="BCF-RX-w8G" secondAttribute="trailing" constant="30" id="Fsm-0Q-2vx"/>
                             <constraint firstAttribute="trailing" secondItem="Ao3-Ic-7Ze" secondAttribute="trailing" constant="40" id="GLF-HF-2bw"/>
+                            <constraint firstItem="QAp-DU-9jt" firstAttribute="centerY" secondItem="K9d-WJ-sJI" secondAttribute="centerY" constant="30" id="K9W-sC-B82"/>
                             <constraint firstItem="JaS-je-VSc" firstAttribute="centerX" secondItem="K9d-WJ-sJI" secondAttribute="centerX" id="L7R-Dz-GHT"/>
                             <constraint firstItem="Vga-7E-ypw" firstAttribute="bottom" secondItem="BCF-RX-w8G" secondAttribute="bottom" constant="20" id="P7e-lf-qUg"/>
                             <constraint firstItem="Ao3-Ic-7Ze" firstAttribute="centerX" secondItem="K9d-WJ-sJI" secondAttribute="centerX" id="QZh-Eh-vdA"/>
@@ -367,6 +383,7 @@
                             <constraint firstItem="pbd-gU-FoB" firstAttribute="top" secondItem="Vga-7E-ypw" secondAttribute="top" constant="80" id="XjW-xv-8iY"/>
                             <constraint firstItem="JaS-je-VSc" firstAttribute="top" secondItem="pbd-gU-FoB" secondAttribute="bottom" constant="50" id="cYf-0F-o9k"/>
                             <constraint firstItem="pbd-gU-FoB" firstAttribute="centerX" secondItem="K9d-WJ-sJI" secondAttribute="centerX" id="eTA-mS-GVN"/>
+                            <constraint firstItem="QAp-DU-9jt" firstAttribute="centerX" secondItem="K9d-WJ-sJI" secondAttribute="centerX" id="j99-Gz-afZ"/>
                             <constraint firstItem="kU7-Ms-PIm" firstAttribute="top" secondItem="Ao3-Ic-7Ze" secondAttribute="bottom" constant="400" id="sRl-MX-B1l"/>
                             <constraint firstItem="Ao3-Ic-7Ze" firstAttribute="top" secondItem="JaS-je-VSc" secondAttribute="bottom" constant="30" id="zIa-RV-PAJ"/>
                         </constraints>
@@ -379,6 +396,8 @@
                         <outlet property="descriptionTopConstr" destination="zIa-RV-PAJ" id="hEx-FX-316"/>
                         <outlet property="howHeightTop" destination="cYf-0F-o9k" id="Te0-af-aAB"/>
                         <outlet property="stepTopConstr" destination="XjW-xv-8iY" id="uRb-0T-oho"/>
+                        <outlet property="weighNumberLabel" destination="svM-iE-Q5p" id="4wX-yx-UFE"/>
+                        <outlet property="weighPicker" destination="QAp-DU-9jt" id="2fg-fy-idN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pi-NJ-wt5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
