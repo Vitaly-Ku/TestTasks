@@ -67,10 +67,13 @@ class HeightVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         } else {
             label = UILabel()
         }
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = UIFont(name: "Helvetica", size: 45)
         label.text = heights[row]
+        label.layer.borderWidth = 3
+        label.layer.backgroundColor = CGColor.init(srgbRed: 49/255, green: 56/255, blue: 61/255, alpha: 1)
+        label.layer.cornerRadius = 5
         return label
     }
     
