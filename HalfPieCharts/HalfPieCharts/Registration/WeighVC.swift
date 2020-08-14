@@ -20,7 +20,7 @@ class WeighVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var bottomDescriptionTop: NSLayoutConstraint!
     
 //    var gall: [UIImage] = [#imageLiteral(resourceName: "little"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "little"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big")]
-    var gal: [String] = ["----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--"]
+    var gal: [String] = ["----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class WeighVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         weighPicker.delegate?.pickerView?(weighPicker, didSelectRow: 0, inComponent: 0)
         weighPicker.backgroundColor = UIColor.white
         weighPicker.selectRow(12, inComponent: 0, animated: true)
-        weighPicker.transform = CGAffineTransform.init(rotationAngle: 90 * (.pi/180))
+        weighPicker.transform = CGAffineTransform.init(rotationAngle: -90 * (.pi/180))
     }
     
     @objc func closePickerView() {
@@ -54,8 +54,8 @@ class WeighVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { return gal[row] }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //        Storage.shared.height = gall[row]
-        weighNumberLabel.text = String(row) + " кг"
+        Storage.shared.weigh = String(row + 40)
+        weighNumberLabel.text = String(row + 40) + " кг"
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat { return 60 }

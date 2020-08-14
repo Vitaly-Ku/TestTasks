@@ -509,9 +509,27 @@
                     <view key="view" contentMode="scaleToFill" id="bmW-lw-1LG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+7" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hb0-rq-ume">
+                                <rect key="frame" x="57" y="423" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="dxv-JZ-1Mg"/>
+                                    <constraint firstAttribute="height" constant="50" id="gr2-HG-ZD0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="continue" textContentType="tel"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hb0-rq-ume" firstAttribute="centerX" secondItem="bmW-lw-1LG" secondAttribute="centerX" id="ZIm-qp-Omy"/>
+                            <constraint firstItem="Hb0-rq-ume" firstAttribute="centerY" secondItem="bmW-lw-1LG" secondAttribute="centerY" id="stg-iJ-Snb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bP4-jE-vje"/>
                     </view>
+                    <connections>
+                        <outlet property="phoneTextField" destination="Hb0-rq-ume" id="fx5-kG-eE4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aQ-ew-NT7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
