@@ -28,7 +28,6 @@ class HeightVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     override func viewWillLayoutSubviews() {
-        stepTopConstr.constant = view.frame.width / 3
         pickerHeight.constant = 150
         stepTopConstr.constant = view.frame.height / 20
         howHeighTop.constant = view.frame.height / 12

@@ -39,7 +39,7 @@ class WeighVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         weighPicker.delegate = self
         weighPicker.delegate?.pickerView?(weighPicker, didSelectRow: 0, inComponent: 0)
         weighPicker.backgroundColor = UIColor.white
-        weighPicker.selectRow(12, inComponent: 0, animated: true)
+//        weighPicker.selectRow(12, inComponent: 0, animated: true)
         weighPicker.transform = CGAffineTransform.init(rotationAngle: -90 * (.pi/180))
     }
     
