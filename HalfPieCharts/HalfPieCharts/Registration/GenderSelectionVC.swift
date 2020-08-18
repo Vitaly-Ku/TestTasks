@@ -65,7 +65,7 @@ class GenderSelectionVC: UIViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
-        Storage.shared.gender = manButton.isSelected ? "male" : "female"
+        Storage.shared.gender = manButton.isSelected ? "мужской" : "женский"
 //        defaults.set(Storage.shared.gender, forKey: Keys.gender)
         self.performSegue(withIdentifier: "toAge", sender: self)
     }

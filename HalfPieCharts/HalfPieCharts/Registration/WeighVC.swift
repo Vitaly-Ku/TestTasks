@@ -18,6 +18,8 @@ class WeighVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var howHeightTop: NSLayoutConstraint!
     @IBOutlet weak var descriptionTopConstr: NSLayoutConstraint!
     @IBOutlet weak var bottomDescriptionTop: NSLayoutConstraint!
+    @IBOutlet weak var weighNumberConstraint: NSLayoutConstraint!
+    
     
 //    var gall: [UIImage] = [#imageLiteral(resourceName: "little"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "little"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big"), #imageLiteral(resourceName: "big")]
     var gal: [String] = ["----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----","--","--","--","--","----"]
@@ -29,10 +31,11 @@ class WeighVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     override func viewWillLayoutSubviews() {
+        weighNumberConstraint.constant = view.frame.height / 50
         stepTopConstr.constant = view.frame.height / 20
         howHeightTop.constant = view.frame.height / 12
         descriptionTopConstr.constant = view.frame.height / 30
-        bottomDescriptionTop.constant = view.frame.height / 3
+        bottomDescriptionTop.constant = view.frame.height / 2.7
     }
     
     func createPickerView() {
