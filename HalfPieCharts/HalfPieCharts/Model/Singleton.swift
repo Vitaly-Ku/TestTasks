@@ -18,4 +18,5 @@ class Storage {
     var weigh: String = ""
     var height: String = ""
     var phone: String = ""
+    
 }
