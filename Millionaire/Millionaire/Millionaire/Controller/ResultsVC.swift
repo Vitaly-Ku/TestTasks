@@ -15,17 +15,27 @@ class ResultsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.layer.cornerRadius = 7
+        table.delegate = self
+        table.dataSource = self
     }
 }
 
 extension ResultsVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { Game.shared.results.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        Game.shared.statistics.count
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
-        (cell.textLabel?.text = Game.shared.results[indexPath.row])!
+        
+        let record = Game.shared.statistics[indexPath.row]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        
+        cell.recordLabel.text = "\(record.score)"
+        cell.dateLabel.text = dateFormatter.string(from: record.date)
+        
         return cell
     }
-    
-    
 }

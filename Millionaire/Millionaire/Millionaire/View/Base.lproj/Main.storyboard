@@ -55,8 +55,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-7F-nMX">
-                                <rect key="frame" x="20" y="194" width="374" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <rect key="frame" x="20" y="194" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -94,7 +94,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmE-xJ-4rM">
-                                <rect key="frame" x="156" y="277.5" width="102" height="30"/>
+                                <rect key="frame" x="156" y="271.5" width="102" height="30"/>
                                 <state key="normal" title="Выход в меню"/>
                                 <connections>
                                     <segue destination="IaG-lt-Qr1" kind="unwind" unwindAction="stepBackWithSegue:" id="ckP-Pm-d7X"/>
@@ -143,12 +143,44 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="XIe-UE-Uvf" customClass="Cell" customModule="Millionaire" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="394" height="93.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XIe-UE-Uvf" id="HfM-Dl-lhl">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwR-tG-SMN">
+                                                    <rect key="frame" x="40" y="21" width="314" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="vDq-3u-syg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phP-h4-oNW">
+                                                    <rect key="frame" x="40" y="51.5" width="314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="phP-h4-oNW" firstAttribute="centerX" secondItem="HfM-Dl-lhl" secondAttribute="centerX" id="2eU-mU-EYS"/>
+                                                <constraint firstItem="phP-h4-oNW" firstAttribute="top" secondItem="PwR-tG-SMN" secondAttribute="bottom" constant="10" id="AyF-FH-TUQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PwR-tG-SMN" secondAttribute="trailing" constant="20" id="c5v-Sp-QIl"/>
+                                                <constraint firstItem="PwR-tG-SMN" firstAttribute="centerX" secondItem="HfM-Dl-lhl" secondAttribute="centerX" id="lKd-l0-xUU"/>
+                                                <constraint firstItem="PwR-tG-SMN" firstAttribute="leading" secondItem="HfM-Dl-lhl" secondAttribute="leadingMargin" constant="20" id="na9-CL-Ibe"/>
+                                                <constraint firstItem="PwR-tG-SMN" firstAttribute="top" secondItem="HfM-Dl-lhl" secondAttribute="topMargin" constant="10" id="p7W-ck-2l3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="phP-h4-oNW" secondAttribute="bottom" constant="10" id="puy-8e-QKr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="phP-h4-oNW" secondAttribute="trailing" constant="20" id="q8g-K8-248"/>
+                                                <constraint firstItem="phP-h4-oNW" firstAttribute="leading" secondItem="HfM-Dl-lhl" secondAttribute="leadingMargin" constant="20" id="tuF-C8-c9i"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="phP-h4-oNW" id="gEO-2D-uJN"/>
+                                            <outlet property="recordLabel" destination="PwR-tG-SMN" id="IIK-Uf-etN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -170,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijn-pV-xSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307" y="133"/>
+            <point key="canvasLocation" x="1305.7971014492755" y="132.58928571428572"/>
         </scene>
     </scenes>
 </document>

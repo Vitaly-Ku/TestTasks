@@ -52,9 +52,8 @@ class GameViewController: UIViewController {
         if label.text == round[game.roundNumber].rightAnswer {
             game.roundNumber += 1
             guard game.roundNumber < 10 else {
-                questionLabel.text = "Вы выиграли!"
-                game.results.append(String(game.roundNumber))
-                clearAnswerFields()
+                questionLabel.text = "Вы выиграли! \(game.roundNumber) из \(game.totalRounds)"
+                endGameSetup()
                 return
             }
             questionLabel.text = round[game.roundNumber].question
@@ -64,10 +63,17 @@ class GameViewController: UIViewController {
             answer4label.text = round[game.roundNumber].answer4
         } else {
             questionLabel.text = "Вы проиграли! Результат \(game.roundNumber) из \(game.totalRounds)"
-            game.results.append(String(game.roundNumber))
-            clearAnswerFields()
-            toMenuButton.isHidden = false
+            endGameSetup()
         }
+    }
+    
+    func endGameSetup() {
+        let record = Statistic(date: Date(), score: "\(game.roundNumber) из \(game.totalRounds)")
+        Game.shared.addStatistic(record)
+        game.results.append(String(game.roundNumber))
+        clearAnswerFields()
+        toMenuButton.isHidden = false
+        game.roundNumber = 0
     }
     
     func clearAnswerFields() {
