@@ -81,6 +81,6 @@ final class RoundFactory {
                                answer3: "Кермадек",
                                answer4: "Черное Логово",
                                rightAnswer: "Бездна Челленджера")
-        return [round1, round2, round3, round4, round5, round6, round7, round8, round9, round10]
+        return [round1, round2, round3, round4, round5, round6, round7, round8, round9, round10].shuffled()
     }
 }

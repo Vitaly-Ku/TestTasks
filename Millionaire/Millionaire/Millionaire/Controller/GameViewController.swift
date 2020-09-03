@@ -25,7 +25,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         toMenuButton.isHidden = true
-
+        setupLabels()
+    }
+    
+    func setupLabels() {
         self.questionLabel.text = self.round[game.roundNumber].question
         self.answer1label.text = self.round[game.roundNumber].answer1
         self.answer2label.text = self.round[game.roundNumber].answer2
