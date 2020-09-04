@@ -111,6 +111,12 @@
                                     <segue destination="IaG-lt-Qr1" kind="unwind" unwindAction="stepBackWithSegue:" id="ckP-Pm-d7X"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос №" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-cP-li9">
+                                <rect key="frame" x="30" y="74" width="354" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -118,10 +124,14 @@
                             <constraint firstItem="UmE-xJ-4rM" firstAttribute="centerX" secondItem="qtD-Pd-XgB" secondAttribute="centerX" id="9jc-i1-AMq"/>
                             <constraint firstItem="5DN-7F-nMX" firstAttribute="leading" secondItem="1Ea-ys-ofY" secondAttribute="leading" constant="20" id="Ahz-7u-RCY"/>
                             <constraint firstItem="1Ea-ys-ofY" firstAttribute="bottom" secondItem="ZfK-kh-wPp" secondAttribute="bottom" constant="10" id="EqV-2N-Nnj"/>
+                            <constraint firstItem="bU4-cP-li9" firstAttribute="top" secondItem="1Ea-ys-ofY" secondAttribute="top" constant="30" id="M32-Gh-90j"/>
                             <constraint firstItem="UmE-xJ-4rM" firstAttribute="top" secondItem="5DN-7F-nMX" secondAttribute="bottom" constant="50" id="Ucs-no-xN5"/>
+                            <constraint firstItem="5DN-7F-nMX" firstAttribute="top" secondItem="bU4-cP-li9" secondAttribute="bottom" constant="95" id="ZQi-aB-EuT"/>
                             <constraint firstItem="5DN-7F-nMX" firstAttribute="top" secondItem="1Ea-ys-ofY" secondAttribute="top" constant="150" id="bWd-ca-S0F"/>
                             <constraint firstItem="1Ea-ys-ofY" firstAttribute="trailing" secondItem="5DN-7F-nMX" secondAttribute="trailing" constant="20" id="fFH-1K-99F"/>
                             <constraint firstItem="5DN-7F-nMX" firstAttribute="centerX" secondItem="qtD-Pd-XgB" secondAttribute="centerX" id="ghd-40-YQJ"/>
+                            <constraint firstItem="1Ea-ys-ofY" firstAttribute="trailing" secondItem="bU4-cP-li9" secondAttribute="trailing" constant="30" id="kqn-MT-dhg"/>
+                            <constraint firstItem="bU4-cP-li9" firstAttribute="leading" secondItem="1Ea-ys-ofY" secondAttribute="leading" constant="30" id="kwf-W4-Vt3"/>
                             <constraint firstItem="1Ea-ys-ofY" firstAttribute="trailing" secondItem="ZfK-kh-wPp" secondAttribute="trailing" constant="10" id="pRg-IW-xT8"/>
                             <constraint firstItem="ZfK-kh-wPp" firstAttribute="leading" secondItem="1Ea-ys-ofY" secondAttribute="leading" constant="10" id="ypA-GH-k3n"/>
                         </constraints>
