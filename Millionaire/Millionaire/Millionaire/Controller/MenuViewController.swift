@@ -18,4 +18,19 @@ class MenuViewController: UIViewController {
         if segue.identifier == "backToMenu " {
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
+        if let seg = segue.destination as? GameViewController {
+        
+        if segue.identifier == "consist" {
+            seg.isRandomGame = false
+            seg.view.backgroundColor = .red
+            seg.consistGame()
+        } else {
+            seg.isRandomGame = true
+            seg.view.backgroundColor = .green
+            seg.randomGame()
+        }
+    }
+    }
 }

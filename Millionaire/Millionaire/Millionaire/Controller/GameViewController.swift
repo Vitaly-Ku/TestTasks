@@ -10,8 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    let round = RoundFactory.makeRound()
+    let roundConsist = RoundFactoryConsistently.makeRound()
+    let roundRandom = RoundFactoryRandom.makeRound()
     let game = Game.shared
+    var isRandomGame = false
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answer1label: UILabel!
@@ -28,13 +30,23 @@ class GameViewController: UIViewController {
         setupLabels()
     }
     
+    func consistGame() {
+        self.questionLabel.text = self.roundConsist[game.roundNumber].question
+        self.answer1label.text = self.roundConsist[game.roundNumber].answer1
+        self.answer2label.text = self.roundConsist[game.roundNumber].answer2
+        self.answer3label.text = self.roundConsist[game.roundNumber].answer3
+        self.answer4label.text = self.roundConsist[game.roundNumber].answer4
+    }
+    
+    func randomGame() {
+        self.questionLabel.text = self.roundRandom[game.roundNumber].question
+        self.answer1label.text = self.roundRandom[game.roundNumber].answer1
+        self.answer2label.text = self.roundRandom[game.roundNumber].answer2
+        self.answer3label.text = self.roundRandom[game.roundNumber].answer3
+        self.answer4label.text = self.roundRandom[game.roundNumber].answer4
+    }
+    
     func setupLabels() {
-        self.questionLabel.text = self.round[game.roundNumber].question
-        self.answer1label.text = self.round[game.roundNumber].answer1
-        self.answer2label.text = self.round[game.roundNumber].answer2
-        self.answer3label.text = self.round[game.roundNumber].answer3
-        self.answer4label.text = self.round[game.roundNumber].answer4
-        
         let answer1tapped = UITapGestureRecognizer(target: self, action: #selector(answer1Chosen))
         let answer2tapped = UITapGestureRecognizer(target: self, action: #selector(answer2Chosen))
         let answer3tapped = UITapGestureRecognizer(target: self, action: #selector(answer3Chosen))
@@ -51,19 +63,30 @@ class GameViewController: UIViewController {
         answer4label.isUserInteractionEnabled = true
     }
     
-    func checkResult(label: UILabel) {
-        if label.text == round[game.roundNumber].rightAnswer {
+    func checkResultForConsistGame(label: UILabel) {
+        if label.text == roundConsist[game.roundNumber].rightAnswer {
             game.roundNumber += 1
             guard game.roundNumber < 10 else {
                 questionLabel.text = "Вы выиграли! \(game.roundNumber) из \(game.totalRounds)"
                 endGameSetup()
                 return
             }
-            questionLabel.text = round[game.roundNumber].question
-            answer1label.text = round[game.roundNumber].answer1
-            answer2label.text = round[game.roundNumber].answer2
-            answer3label.text = round[game.roundNumber].answer3
-            answer4label.text = round[game.roundNumber].answer4
+            consistGame()
+        } else {
+            questionLabel.text = "Вы проиграли! Результат \(game.roundNumber) из \(game.totalRounds)"
+            endGameSetup()
+        }
+    }
+    
+    func checkResultForRandomGame(label: UILabel) {
+        if label.text == roundRandom[game.roundNumber].rightAnswer {
+            game.roundNumber += 1
+            guard game.roundNumber < 10 else {
+                questionLabel.text = "Вы выиграли! \(game.roundNumber) из \(game.totalRounds)"
+                endGameSetup()
+                return
+            }
+            randomGame()
         } else {
             questionLabel.text = "Вы проиграли! Результат \(game.roundNumber) из \(game.totalRounds)"
             endGameSetup()
@@ -87,18 +110,22 @@ class GameViewController: UIViewController {
     }
     
     @objc func answer1Chosen() {
-        checkResult(label: answer1label)
+        guard isRandomGame else { return checkResultForConsistGame(label: answer1label) }
+        checkResultForRandomGame(label: answer1label)
     }
     
     @objc func answer2Chosen() {
-        checkResult(label: answer2label)
+        guard isRandomGame else { return checkResultForConsistGame(label: answer2label) }
+        checkResultForRandomGame(label: answer2label)
     }
     
     @objc func answer3Chosen() {
-        checkResult(label: answer3label)
+        guard isRandomGame else { return checkResultForConsistGame(label: answer3label) }
+        checkResultForRandomGame(label: answer3label)
     }
     
     @objc func answer4Chosen() {
-        checkResult(label: answer4label)
+        guard isRandomGame else { return checkResultForConsistGame(label: answer4label) }
+        checkResultForRandomGame(label: answer4label)
     }
 }
