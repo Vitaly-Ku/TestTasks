@@ -111,7 +111,7 @@
                                     <segue destination="IaG-lt-Qr1" kind="unwind" unwindAction="stepBackWithSegue:" id="ckP-Pm-d7X"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос №" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-cP-li9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-cP-li9">
                                 <rect key="frame" x="30" y="74" width="354" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -142,6 +142,7 @@
                         <outlet property="answer2label" destination="RyQ-on-gfA" id="f2f-T3-aRQ"/>
                         <outlet property="answer3label" destination="TK5-C1-Obg" id="xnK-ob-qzl"/>
                         <outlet property="answer4label" destination="Unc-ff-n7m" id="kGa-XA-8x1"/>
+                        <outlet property="numberRoundLabel" destination="bU4-cP-li9" id="p3D-4k-lu7"/>
                         <outlet property="questionLabel" destination="5DN-7F-nMX" id="3Mf-hm-Nmz"/>
                         <outlet property="toMenuButton" destination="UmE-xJ-4rM" id="SgS-hq-uKf"/>
                     </connections>

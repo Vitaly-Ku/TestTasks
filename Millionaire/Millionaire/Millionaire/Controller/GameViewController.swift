@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var answer3label: UILabel!
     @IBOutlet weak var answer4label: UILabel!
     @IBOutlet weak var toMenuButton: UIButton!
+    @IBOutlet weak var numberRoundLabel: UILabel!
     
 //    var onGameEnd: ((String) -> Void)?
     
@@ -28,6 +29,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         toMenuButton.isHidden = true
         setupLabels()
+        numberRoundLabel.text = "Вопрос № \(game.roundNumber + 1) из \(game.totalRounds)"
     }
     
     func consistGame() {
@@ -64,10 +66,12 @@ class GameViewController: UIViewController {
     }
     
     func checkResultForConsistGame(label: UILabel) {
+        numberRoundLabel.text = "Вопрос № \(game.roundNumber + 2) из \(game.totalRounds)"
         if label.text == roundConsist[game.roundNumber].rightAnswer {
             game.roundNumber += 1
             guard game.roundNumber < 10 else {
                 questionLabel.text = "Вы выиграли! \(game.roundNumber) из \(game.totalRounds)"
+                numberRoundLabel.isHidden = true
                 endGameSetup()
                 return
             }
@@ -79,10 +83,12 @@ class GameViewController: UIViewController {
     }
     
     func checkResultForRandomGame(label: UILabel) {
+        numberRoundLabel.text = "Вопрос № \(game.roundNumber + 2) из \(game.totalRounds)"
         if label.text == roundRandom[game.roundNumber].rightAnswer {
             game.roundNumber += 1
             guard game.roundNumber < 10 else {
                 questionLabel.text = "Вы выиграли! \(game.roundNumber) из \(game.totalRounds)"
+                numberRoundLabel.isHidden = true
                 endGameSetup()
                 return
             }
